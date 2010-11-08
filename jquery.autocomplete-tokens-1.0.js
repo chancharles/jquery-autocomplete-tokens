@@ -77,6 +77,9 @@
             }
           }
           break;
+        default:
+          settings.tokens.tokens("unselect");
+          break;
         }
       };
 
@@ -87,6 +90,7 @@
        */
       settings.autocomplete.bind("autocompleteselect", function(event, ui) {
         settings.autocomplete.val('');
+        settings.tokens.tokens("unselect");
         settings.tokens.tokens("add", [ ui.item ]);
         return false;
       });
