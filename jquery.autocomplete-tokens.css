@@ -1,0 +1,10 @@
+.autocomplete-tokens-input {
+  border: none !important;
+  outline: none !important;
+}
+
+.autocomplete-tokens {
+  border: solid 1px lightgrey;
+  padding: 2px;
+}
+
