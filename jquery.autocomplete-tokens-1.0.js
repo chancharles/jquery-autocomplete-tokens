@@ -120,6 +120,6 @@
           .error('Method ' + method + ' does not exist on jQuery.autoCompleteTokens');
     }
     return $selector;
-  }
+  };
 
 })(jQuery);
