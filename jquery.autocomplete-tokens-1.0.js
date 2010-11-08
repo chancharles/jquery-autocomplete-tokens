@@ -1,6 +1,8 @@
 /*
  * jQuery Plugin: Autocomplete Tokens
  * Version 1.0
+ *
+ * https://github.com/chancharles/jquery-autocomplete-tokens
  */
 (function($) {
 
