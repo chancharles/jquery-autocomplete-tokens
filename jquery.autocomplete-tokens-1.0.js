@@ -16,12 +16,11 @@
  * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
  * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
  * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
- * THE SOFTWARE.
- *
- * jQuery Plugin: Autocomplete Tokens
- * Version 1.0
- *
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ * 
+ * jQuery Plugin: Autocomplete Tokens Version 1.0
+ * 
  * https://github.com/chancharles/jquery-autocomplete-tokens
  */
 (function($) {
@@ -45,67 +44,66 @@
         }
       };
 
-      // If options exist, lets merge them with our default settings
-    if (options) {
-      $.extend(settings, options);
-    }
-
-    $selector.data(constants.dataKey, {
-      settings : settings,
-      items : []
-    });
-
-    settings.autocomplete.addClass(settings.classes.tokensInput);
-    settings.tokens.addClass(settings.classes.tokens);
-
-    /**
-     * Install key down handler for autocomplete
-     */
-    var onKeyDown = function(event) {
-      var $input = $(this);
-      var keyCode = $.ui.keyCode;
-      switch (event.keyCode) {
-      case keyCode.BACKSPACE:
-        var value = $input.val();
-        if (value.length == 0) {
-          var selectedItem = settings.tokens.tokens("selectedItem");
-          if (!selectedItem) {
-            var tokens = settings.tokens.tokens("items");
-            if (tokens.length > 0) {
-              settings.tokens.tokens("select", tokens[tokens.length - 1]);
-            }
-          } else {
-            settings.tokens.tokens("remove", [ selectedItem ]);
-          }
-        }
-        break;
+      if (options) {
+        $.extend(settings, options);
       }
-    };
 
-    settings.autocomplete.keydown(onKeyDown);
+      $selector.data(constants.dataKey, {
+        settings : settings,
+        items : []
+      });
 
-    /**
-     * Install select handler for autocomplete
-     */
-    settings.autocomplete.bind("autocompleteselect", function(event, ui) {
-      settings.autocomplete.val('');
-      settings.tokens.tokens("add", [ ui.item ]);
-      return false;
-    });
+      settings.autocomplete.addClass(settings.classes.tokensInput);
+      settings.tokens.addClass(settings.classes.tokens);
 
-    /**
-     * Reposition autocomplete menu
-     */
-    settings.autocomplete.autocomplete("option", "position", {
-      my : "left top",
-      at : "left bottom",
-      of : settings.tokens,
-      collision : "none"
-    });
-  },
+      /**
+       * Install key down handler for autocomplete
+       */
+      var onKeyDown = function(event) {
+        var $input = $(this);
+        var keyCode = $.ui.keyCode;
+        switch (event.keyCode) {
+        case keyCode.BACKSPACE:
+          var value = $input.val();
+          if (value.length == 0) {
+            var selectedItem = settings.tokens.tokens("selectedItem");
+            if (!selectedItem) {
+              var tokens = settings.tokens.tokens("items");
+              if (tokens.length > 0) {
+                settings.tokens.tokens("select", tokens[tokens.length - 1]);
+              }
+            } else {
+              settings.tokens.tokens("remove", [ selectedItem ]);
+            }
+          }
+          break;
+        }
+      };
 
-  destroy : function(settings) {
-  }
+      settings.autocomplete.keydown(onKeyDown);
+
+      /**
+       * Install select handler for autocomplete
+       */
+      settings.autocomplete.bind("autocompleteselect", function(event, ui) {
+        settings.autocomplete.val('');
+        settings.tokens.tokens("add", [ ui.item ]);
+        return false;
+      });
+
+      /**
+       * Reposition autocomplete menu
+       */
+      settings.autocomplete.autocomplete("option", "position", {
+        my : "left top",
+        at : "left bottom",
+        of : settings.tokens,
+        collision : "none"
+      });
+    },
+
+    destroy : function(settings) {
+    }
 
   };
 
