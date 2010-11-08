@@ -57,6 +57,14 @@
       settings.tokens.addClass(settings.classes.tokens);
 
       /**
+       * On click on the tokens container, we set the focus to the autocomplete inputbox.
+       * This method must not return false or the tokens's click handler will not be invoked.
+       */
+      settings.tokens.click(function() {
+        settings.autocomplete.focus();
+      });
+
+      /**
        * Install key down handler for autocomplete
        */
       var onKeyDown = function(event) {
