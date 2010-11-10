@@ -57,6 +57,12 @@
       settings.tokens.addClass(settings.classes.tokens);
 
       /**
+       * Since both the tokens and the autocomplete input are float left,
+       * we need to add a clear div to make sure the height is properly shown.
+       */
+      $('<div style="clear: both;"></div>').appendTo(settings.tokens);
+
+      /**
        * On click on the tokens container, we set the focus to the autocomplete inputbox.
        * This method must not return false or the tokens's click handler will not be invoked.
        */

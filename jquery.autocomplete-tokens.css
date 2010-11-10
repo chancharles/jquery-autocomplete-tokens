@@ -1,6 +1,7 @@
 .autocomplete-tokens-input {
   border: none !important;
   outline: none !important;
+  float: left;
 }
 
 .autocomplete-tokens {
