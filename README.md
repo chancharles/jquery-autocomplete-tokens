@@ -23,7 +23,7 @@ Sample usage
     });
 
     // finally, link the autocomplete widget and the token container together.
-    $(".tokens").autoCompleteTokens( {
+    $(".tokens").autocompleteTokens( {
         autocomplete: $("input[name='language']"),
         tokens: $(".tokens")
     });
