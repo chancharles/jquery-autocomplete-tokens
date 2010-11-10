@@ -27,3 +27,10 @@ Sample usage
         autocomplete: $("input[name='language']"),
         tokens: $(".tokens")
     });
+
+Events
+------
+
+ * tokensadded.tokens
+   Triggered when any token(s) is added. An event object will be passed into the event handler. The event object has a single attribute "items" which is an array of items added to the tokens.
+
