@@ -35,3 +35,10 @@ Events
 
    Triggered when any token(s) is added. An event object will be passed into the event handler. The event object has a single attribute "items" which is an array of items added to the tokens.
 
+ * tokensremoved.tokens
+
+   Triggered when any token(s) is removed. An event object will be passed into the event handler. The event object has a single attribute "items" which is an array of items removed from the tokens.
+
+ * tokenssorted.tokens
+
+   Triggered when the tokens are sorted.
