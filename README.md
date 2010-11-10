@@ -28,6 +28,24 @@ Sample usage
         tokens: $(".tokens")
     });
 
+Settings
+--------
+  * limit
+
+    The token limits. Once the number of tokens is reached, the autocomplete input will be disabled.
+
+  * tokensAdded
+
+    Callback handler when tokens are added.
+
+  * tokensRemoved
+
+    Callback handler when tokens are removed.
+
+  * tokensSorted
+
+    Callback handler when tokens are sorted.
+
 Events
 ------
 
