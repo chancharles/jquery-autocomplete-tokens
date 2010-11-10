@@ -146,7 +146,7 @@
 
   };
 
-  $.fn.autoCompleteTokens = function(method) {
+  $.fn.autocompleteTokens = function(method) {
     var $selector = this;
     // Method calling logic
     if (methods[method]) {
