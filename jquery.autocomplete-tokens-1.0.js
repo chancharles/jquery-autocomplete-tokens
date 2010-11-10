@@ -125,6 +125,11 @@
         return false;
       });
 
+      settings.autocomplete.bind("autocompleteopen", function(event, ui) {
+        var tokensWidth = settings.tokens.innerWidth();
+        $(".ui-autocomplete.ui-menu").width(tokensWidth);
+      });
+      
       /**
        * Reposition autocomplete menu
        */
