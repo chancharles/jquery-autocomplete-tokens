@@ -8,3 +8,6 @@
   border: solid 1px lightgrey;
 }
 
+.autocomplete-tokens.autocomplete-tokens-limited {
+  border: solid 1px transparent;
+}
